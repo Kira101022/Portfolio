@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — Shakira Santos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Monda:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-logo mono" href="index.html">SHARKY SANTOS</a>
+  <div class="nav-links mono">
+    <a href="index.html">Profile</a>
+    <a href="projects.html">Projects</a>
+    <a href="certification.html">Certifications</a>
+    <a href="skills.html">Skills</a>
+    <a href="contact.html" class="active">Contact</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<section class="section" id="contact">
+    <p class="label mono">05 / contact</p>
+    <h2 class="mono">Close the Connection</h2>
+    <p class="availability mono"><span class="dot"></span> Currently available for freelance &amp; part-time roles</p>
+    <p class="contact-intro">Open to interesting problems, collaborations, and conversations about systems, interfaces, or the Wired. Reach out directly or use the form below.</p>
+
+    <div class="contact-layout">
+      <div class="contact-info">
+        <p class="entry-title mono">Email</p>
+        <a class="mono" href="mailto:santosshakira699@gmail.com">santosshakira699@gmail.com</a>
+        <p class="entry-title mono" style="margin-top:1.4rem;">Elsewhere</p>
+        <div class="social-row mono">
+            <a href="https://github.com/Kira101022" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://linkedin.com/">LinkedIn</a>
+          <a href="https://x.com/">X / Twitter</a>
+        </div>
+      </div>
+
+      <form class="contact-form" id="contact-form" action="#" method="post">
+        <label class="mono" for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label class="mono" for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label class="mono" for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button class="btn btn-primary" type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p class="mono">no matter where you go, everyone's always connected — © 2026 Shakira Santos</p>
+  </footer>
+
+</div>
+<script src="contact.js"></script>
+</body>
+</html>

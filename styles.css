@@ -1,0 +1,575 @@
+:root {
+  --bg-color: #0d0d11;
+  --card-bg: #36013F; 
+  --text-primary: #e2e8f0;
+  --text-muted: #8e95a5;
+  --accent-red: #e63946;
+  --accent-red-hover: #ff4d5a;
+  --accent-red-dim: rgba(230, 57, 70, 0.15);
+  --font-mono: 'Monda', monospace;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  font-size: 16px;
+  position: relative;
+  min-height: 100vh;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url('img/img/lain.gif') center/cover no-repeat;
+  opacity: 0.12;
+  z-index: -1;
+  pointer-events: none;
+}
+
+a {
+  color: var(--accent-red);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent-red-hover);
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+.wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.nav {
+  position: sticky;
+  top: 0;
+  background-color: #36013F;
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--card-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  z-index: 100;
+}
+
+.nav-logo {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.nav-links a.active {
+  color: var(--accent-red);
+}
+
+.nav-links a:hover {
+  color: var(--accent-red);
+}
+
+.hero {
+  padding: 5rem 0 3rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+  }
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent-red);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.prompt-line {
+  font-size: 0.85rem;
+  color: var(--accent-red);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.caret {
+  display: inline-block;
+  width: 8px;
+  height: 14px;
+  background-color: var(--accent-red);
+  margin-left: 4px;
+  vertical-align: middle;
+}
+
+.name {
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+
+
+.sep {
+  color: var(--text-muted);
+}
+
+.intro {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.hero-statement {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.hero-photo-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-photo {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  border-radius: 8px;
+  border: 2px solid var(--accent-red);
+  box-shadow: 0 0 25px rgba(230, 57, 70, 0.2);
+  object-fit: cover;
+}
+
+.cta-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.65rem 1.4rem;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: var(--accent-red);
+  color: #ffffff;
+  border: 1px solid var(--accent-red);
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-red-hover);
+  color: #ffffff;
+}
+
+.btn-ghost {
+  background-color: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--card-border);
+}
+
+.btn-ghost:hover {
+  border-color: var(--accent-red);
+  color: var(--accent-red);
+}
+
+.social-row {
+  display: flex;
+  gap: 1.25rem;
+  font-size: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.social-row a {
+  color: var(--text-muted);
+}
+
+.social-row a:hover {
+  color: var(--accent-red);
+}
+
+.section {
+  padding: 4rem 0;
+  border-top: 1px solid var(--card-border);
+}
+
+.label {
+  font-size: 0.85rem;
+  color: var(--accent-red);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.25rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: #ffffff;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .profile-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto;
+  }
+
+  /* Personal Introduction spans both rows of the left column */
+  .profile-grid .profile-block:first-child {
+    grid-row: span 2;
+  }
+}
+
+
+.profile-block {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  padding: 1.5rem;
+  border-radius: 6px;
+}
+
+.profile-block h3 {
+  font-size: 1rem;
+  color: var(--accent-red);
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid var(--card-border);
+  padding-bottom: 0.5rem;
+}
+
+.profile-block p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.entry-title {
+  color: var(--text-primary) !important;
+  font-weight: 600;
+}
+
+.entry-meta {
+  font-size: 0.8rem !important;
+  color: var(--accent-red) !important;
+  margin-bottom: 0.5rem;
+}
+
+.tag-list, .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  margin-top: 0.5rem;
+}
+
+.tag-list li, .tags span {
+  background-color: var(--accent-red-dim);
+  color: var(--accent-red);
+  border: 1px solid rgba(230, 57, 70, 0.3);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-family: var(--font-mono);
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 360px));
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.project {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 6px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.preview {
+  background-color: #08080a;
+  border: 1px dashed var(--card-border);
+  padding: 2rem 1rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.category {
+  font-size: 0.75rem;
+  color: var(--accent-red);
+  text-transform: uppercase;
+}
+
+.project h3 {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  margin: 0.25rem 0 0.5rem;
+}
+
+.project p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  flex-grow: 1;
+  margin-bottom: 1rem;
+}
+
+.project-links {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  font-size: 0.85rem;
+}
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .cert-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.cert-block {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  padding: 1.25rem;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cert-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid var(--card-border);
+  margin-bottom: 1rem;
+}
+
+.cert-block h3 {
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.cert-issuer {
+  font-size: 0.85rem;
+  color: var(--accent-red);
+  margin-bottom: 0.75rem;
+}
+
+.cert-block p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.skill {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  padding: 1.25rem;
+  border-radius: 6px;
+}
+
+.skill h3 {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.contact-intro {
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+/* ---------- Contact: heading + details beside the form ---------- */
+@media (min-width: 768px) {
+  #contact {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    grid-template-rows: auto auto auto auto 1fr;
+    column-gap: 3rem;
+    align-content: start;
+  }
+
+  /* left column: label, heading, availability, intro, email + socials */
+  #contact .label,
+  #contact h2,
+  #contact .availability,
+  #contact .contact-intro,
+  #contact .contact-info {
+    grid-column: 1;
+  }
+
+  /* let the info block and the form become direct grid items */
+  #contact .contact-layout {
+    display: contents;
+  }
+
+  /* right column: the form spans the full height */
+  #contact .contact-form {
+    grid-column: 2;
+    grid-row: 1 / span 5;
+  }
+}
+
+/* keep the email address and form labels white */
+#contact .contact-info a[href^="mailto:"],
+.contact-form label {
+  color: #ffffff;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.contact-form input, .contact-form textarea {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  color: var(--text-primary);
+  padding: 0.75rem;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+  outline: none;
+  border-color: var(--accent-red);
+}
+
+footer {
+  padding: 3rem 0;
+  border-top: 1px solid var(--card-border);
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* ---------- White email address + white form labels (must stay at the very end) ---------- */
+#contact a[href^="mailto"] {
+  color: #ffffff !important;
+}
+
+#contact a[href^="mailto"]:hover {
+  color: var(--accent-red-hover) !important;
+}
+
+.contact-form label {
+  color: #ffffff;
+}
+
+
+.contact-form input,
+.contact-form textarea {
+  background-color: #848884;
+  color: #0d0d11;
+  border: 1px solid #848884;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #2e312e;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--accent-red);
+  box-shadow: 0 0 0 2px rgba(230, 57, 70, 0.35);
+}
